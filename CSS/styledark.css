@@ -139,6 +139,7 @@ article{
   background-repeat: repeat;
   background-size: cover;
 }
+
 article section{
     width: 100%;
     background-color: #131313 ; /*#575358*/
@@ -146,6 +147,7 @@ article section{
   margin: em;
   border-radius: 0px;
 }
+
 section#inicial{
     display: flex;
     text-align: left;
@@ -155,21 +157,26 @@ section#inicial{
     align-items: stretch;
     flex-wrap: nowrap;
 }
+
 section#inicial div{
     margin: 3em;
 }
+
 section#inicial h1{
     margin-bottom: 0.2em;
     font-size: 3em;
     color:#ad8524 ;
     border: #544119 1px;
 }
-section#inicial .detalhes{
+
+section#inicial .detalhes #servicos{
     margin-bottom: 0.2em;
 }
+
 .botao a{ 
     color: #000;
 }
+
 .botao {
 font-size: 0.8em;
 width: 300px;
@@ -181,6 +188,7 @@ background: -webkit-linear-gradient(145deg, rgba(210,172,72,1) 0%, rgba(210,172,
 background: linear-gradient(145deg, rgba(210,172,72,1) 0%, rgba(210,172,72,1) 28%, rgba(210,172,72,1) 72%, rgba(175,135,39,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2ac48",endColorstr="#af8727",GradientType=1);
 }
+
 section .bg{
     background-color: rgb(49, 49, 49);
     margin: 5px;
@@ -191,21 +199,25 @@ section .tri-flex{
     display: flex;
     margin: 3em;
 }
+
 .escondido-tri{
   opacity: 0;
   transform: translateY(100px);
   transition: all 2s;
 }
+
 .visivel-tri{
   opacity: 1;
   transform: translateY(0px);
   transition: all 2s;
 }
+
 section#Habilidades h1{
     font-size: 3em;
   color:#ad8524 ;
   border: #544119 1px;
 }
+
 section#Habilidades h3{
     font-size: 1.2em;
   color:#ad8524 ;
@@ -216,29 +228,35 @@ section#Habilidades h3{
     background-color: rgb(210,172,72,);
     height: 200px;
 }
+
 .amostras{
   border-radius: 0px;
   width: 100%;
   background-color: #131313 ;
 }
+
 .amostras img{
   width: 50%;
   height: auto;
 }
+
 .escondido{
   opacity: 0;
    transform: translateX(-100px);
    transition: all 2s;
 }
+
 .visivel{
   opacity: 1;
   transform: translateX(0px);
   transition: all 2s;
 }
+
 .amostras div{
     display: flex;
   justify-content: space-evenly;
 }
+
 .titulo{
     text-align: center;
     margin-bottom: 0.2em;
@@ -246,9 +264,43 @@ section#Habilidades h3{
     color:#ad8524 ;
     border: #544119 1px;
 }
+
+section#servicos .bg{
+  background-color: rgb(49, 49, 49);
+  margin: 5px;
+  padding: 5px;
+  color: #ddd;
 }
-/*animações*/
+
+section #servicos{
+  display: flex;
+  margin: 3em;
+}
+
+.escondido-tri{
+opacity: 0;
+transform: translateY(100px);
+transition: all 2s;
+}
+.visivel-tri{
+opacity: 1;
+transform: translateY(0px);
+transition: all 2s;
+}
+section#servicos h1{
+  font-size: 3em;
+color:#ad8524 ;
+border: #544119 1px;
+}
+section#servicos h3{
+  font-size: 1.2em;
+color:#ad8524 ;
+border: #544119 1px;
+}
+
 /*main*/
+}/*fechamento do modo escuro*/
+/*animações*/
 footer{
   position: relative;
   display: flex;
