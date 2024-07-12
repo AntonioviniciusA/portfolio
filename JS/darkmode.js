@@ -7,10 +7,10 @@ function onChecked() {
   }
 
   document.addEventListener("DOMContentLoaded", function() {
-    var checkbox = document.getElementById("tema");
+    var btndetema = document.getElementById("tema");
 
-    checkbox.addEventListener("change", function() {
-      if (checkbox.checked) {
+    btndetema.addEventListener("change", function() {
+      if (btndetema.checked) {
         onChecked();
       } else {
         onUnchecked();
