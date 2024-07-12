@@ -4,6 +4,7 @@ body.darkmode {
   padding: 0;
   background: #000;
   overflow-x: hidden;
+  overflow-y: scroll;
   a {
     color: #ad8524;
     text-decoration: none;
@@ -11,6 +12,8 @@ body.darkmode {
 
   header {
     background-color: black;
+    position: fixed;
+    width: 100%;
   }
 
   footer {
@@ -144,7 +147,13 @@ body.darkmode {
     text-shadow: #ffb005 3px 3px 3px;
     font-size: 20px;
   }
-
+  .lineheader{
+  width: 0%;
+  background-color: #ad8524;
+  height: 3px;
+  position: absolute;
+  bottom: 0px;
+  }
   /*main*/
   article {
     background-color: #000;
@@ -242,13 +251,36 @@ body.darkmode {
   .escondido-tri {
     opacity: 0;
     transform: translateY(100px);
-    transition: all 2s;
+    transition:  2s;
+  }
+  .escondido-tri2 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition:  2s;
+  }
+  .escondido-tri3 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition:  2s;
   }
 
   .visivel-tri {
     opacity: 1;
     transform: translateY(0px);
     transition: all 2s;
+    margin: 5px;
+  }
+  .visivel-tri2 {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 3s;
+    margin: 5px;
+  }
+  .visivel-tri3 {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 4s;
+    margin: 5px;
   }
 
   section#Habilidades h1 {
@@ -360,6 +392,13 @@ body.darkmode {
 
 #servicos-3{
   grid-area: terceiro;
+}
+.servicos-item span{
+  background-color: #131313;
+  padding: 3px;
+  margin: 2px;
+  border: #000 2px;
+  border-radius: 30%;
 }
 
   /*main*/
