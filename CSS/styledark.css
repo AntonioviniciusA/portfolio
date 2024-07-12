@@ -147,12 +147,13 @@ body.darkmode {
     text-shadow: #ffb005 3px 3px 3px;
     font-size: 20px;
   }
-  .lineheader{
-  width: 0%;
+  #lineheader{
+    width: 0%;
   background-color: #ad8524;
   height: 3px;
   position: absolute;
   bottom: 0px;
+  transition: width 0.5s ease;
   }
   /*main*/
   article {
