@@ -3,6 +3,7 @@ body.darkmode {
   margin: 0;
   padding: 0;
   background: #000;
+  overflow-x: hidden;
   a {
     color: #ad8524;
     text-decoration: none;
@@ -159,8 +160,7 @@ body.darkmode {
   article section {
     width: 100%;
     background-color: #131313; /*#575358*/
-    font-size: 2em;
-    margin: em;
+    font-size: 1.7em;
     border-radius: 0px;
   }
 
@@ -180,7 +180,7 @@ body.darkmode {
 
   section#inicial h1 {
     margin-bottom: 0.2em;
-    font-size: 3em;
+    font-size: 7rem;
     color: #ad8524;
     border: #544119 1px;
   }
@@ -251,7 +251,7 @@ body.darkmode {
   }
 
   section#Habilidades h1 {
-    font-size: 3em;
+    font-size: 5rem;
     color: #ad8524;
     border: #544119 1px;
   }
@@ -305,10 +305,10 @@ body.darkmode {
 
   section#servicos .bg {
     background-color: rgb(49, 49, 49);
-    padding: 150px;
-    margin-left: 30%;
+    padding: 100px;
     color: #ddd;
-    width: 70%;
+    margin-left: 30%;
+    width: 59.5%;
     display: grid;
     grid-template-areas: 
     "header header"
@@ -316,9 +316,11 @@ body.darkmode {
     "terceiro terceiro"
     ;
   }
-
   section#servicos {
     width: 100%;
+    background-image: url(../IMAGE/bgservicos.png);
+    background-position-y: center;
+    background-size: 30%;
   }
 
   section#servicos h1 {
@@ -328,22 +330,31 @@ body.darkmode {
   }
 
   section#servicos h3 {
-    font-size: 1.2em;
+    font-size: 2em;
+    color: #ad8524;
+    border: #544119 1px;
+  }
+  section#servicos h3 {
+    font-size: 2em;
     color: #ad8524;
     border: #544119 1px;
   }
 .quadrado-div{
-  width: 50%;
+  width: 60%;
 }
+
 #titulo-servicos{
   grid-area: header;
 }
+
 #servicos-1{
   grid-area: primeiro;
 }
+
 #servicos-2{
   grid-area: segundo;
 }
+
 #servicos-3{
   grid-area: terceiro;
 }
