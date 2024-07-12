@@ -305,26 +305,20 @@ body.darkmode {
 
   section#servicos .bg {
     background-color: rgb(49, 49, 49);
-    margin: 5px;
-    padding: 5px;
+    padding: 150px;
+    margin-left: 30%;
     color: #ddd;
+    width: 70%;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "primeiro segundo"
+    "terceiro terceiro"
+    ;
   }
 
-  section #servicos {
-    display: flex;
-    margin: 3em;
-  }
-
-  .escondido-tri {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: all 2s;
-  }
-
-  .visivel-tri {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 2s;
+  section#servicos {
+    width: 100%;
   }
 
   section#servicos h1 {
@@ -338,6 +332,21 @@ body.darkmode {
     color: #ad8524;
     border: #544119 1px;
   }
+.quadrado-div{
+  width: 50%;
+}
+#titulo-servicos{
+  grid-area: header;
+}
+#servicos-1{
+  grid-area: primeiro;
+}
+#servicos-2{
+  grid-area: segundo;
+}
+#servicos-3{
+  grid-area: terceiro;
+}
 
   /*main*/
 } /*fechamento do modo escuro*/
