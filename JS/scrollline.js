@@ -4,3 +4,6 @@ window.addEventListener('scroll', function() {
     const scrollPercent = (scrollTop / docHeight) * 100;
     document.getElementById('lineheader').style.width = scrollPercent + '%';
   });
+
+  const projetos = document.getElementById("btnprojetos");
+  projetos.scroll(0, 1000);
