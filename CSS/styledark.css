@@ -1,3 +1,4 @@
+@media screen and (min-width:1024px){
 /*DARKMODE*/
 body.darkmode {
   margin: 0;
@@ -760,4 +761,5 @@ button {
   transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg)
     translateY(2px);
   border-radius: 50%;
+}
 }

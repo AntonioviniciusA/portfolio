@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
 }
-
+@media screen and (min-width: 1024px){
 header {
   background-color: white;
   top: 0;
@@ -790,4 +790,5 @@ button {
   to {
     transform: translateY(-1000px);
   }
+}
 }
