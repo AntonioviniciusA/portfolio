@@ -1372,9 +1372,10 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 90px;
+      height: 200px;
       padding-top: 20px;
       margin-top: 10px;
+      margin-bottom: 10px;
       background-color: #fff;
       color: #ad8524;
       text-align: center;
@@ -1389,7 +1390,7 @@
   
     footer .icone {
       width: 20%;
-      padding: 0;
+      padding: 5px;
     }
     .cp {
       position: absolute;
@@ -1397,12 +1398,14 @@
       left: 100px;
     }
     footer h5 {
-      margin: 0;
+      margin: 5px;
     }
     footer h4 {
       color: #ad8524;
+      margin-top: 15px;
     }
     footer sub {
+      margin-top: 10;
       color: #ad8524;
     }
     /*Copyright - 2024 Lokesh1379 (C Lokesh) */
