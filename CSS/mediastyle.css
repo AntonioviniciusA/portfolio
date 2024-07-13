@@ -440,12 +440,13 @@
       section#inicial {
         display: flex;
         text-align: left;
-        height: 1000px;
+        height: 400px;
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
         flex-wrap: nowrap;
-      }
+        margin: 0;       
+    }
   
       section#inicial div {
         margin: 2em;
@@ -503,7 +504,7 @@
       }
       section .bg {
         background-color: rgb(49, 49, 49);
-        padding: 5px;
+        margin: 0;
       }
   
       section .tri-flex {
@@ -564,6 +565,7 @@
       }
       section#Habilidades {
         padding: 30px 0px 30px 0px;
+        margin: 0;
       }
   
       .espaço {
@@ -616,7 +618,7 @@
         padding: 10px 10px 10px 10px;
         color: #ddd;
         margin-left: 30%;
-        width: 70%;
+        width: 65%;
         display: grid;
         grid-template-areas:
           "header"
@@ -643,7 +645,10 @@
         border: #544119 1px;
       }
       .quadrado-div {
-        width: 90%;
+        width: 65%;
+      }
+      .retagulo-div{
+        width: 65%;
       }
   
       #titulo-servicos {
@@ -681,94 +686,7 @@
       /*main*/
     } /*fechamento do modo escuro*/
     /*animações*/
-    footer {
-      position: relative;
-      display: flex;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 90px;
-      padding-top: 20px;
-      margin-top: 10px;
-      color: #ad8524;
-      text-align: center;
-      font-size: small;
-      font-family: sans-serif;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-content: space-between;
-      align-items: stretch;
-    }
-  
-    footer .icone {
-      width: 20%;
-      padding: 0;
-    }
-    .cp {
-      position: absolute;
-      bottom: 0;
-      margin-bottom: 10px;
-      left: 100px;
-    }
-    footer h5 {
-      margin: 0;
-    }
-    footer h4 {
-      color: #ad8524;
-    }
-    footer sub {
-      color: #ad8524;
-    }
-    /*Copyright - 2024 Lokesh1379 (C Lokesh) */
-    .parent {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .child {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transform-style: preserve-3d;
-      transition: all 0.5s ease-in-out;
-      border-radius: 50%;
-      margin: 0 5px;
-      background-color: #ddd;
-    }
-    .darkmode#github {
-      fill: white;
-    }
-    .child:hover {
-      background-color: #ddd;
-      background-position: -100px 100px, -100px 100px;
-      transform: rotate3d(0.5, 1, 0, 30deg);
-      transform: perspective(180px) rotateX(60deg) translateY(2px);
-      box-shadow: 0px 10px 10px rgb(1, 49, 182);
-    }
-  
-    button {
-      border: none;
-      background-color: transparent;
-      font-size: 20px;
-    }
-  
-    .button:hover {
-      width: inherit;
-      height: inherit;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg)
-        translateY(2px);
-      border-radius: 50%;
-    }
-  
+
     header {
       background-color: white;
       top: 0;
@@ -1208,15 +1126,15 @@
     article section {
       width: 100%;
       background-color: #969696; /*#575358*/
-      font-size: 1.7em;
+      font-size: 15px;
       border-radius: 0px;
-      margin: 5px;
+      margin-top: 5px;
     }
   
     section#inicial {
       display: flex;
       text-align: left;
-      height: 1000px;
+      height: 400px;
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
@@ -1224,12 +1142,12 @@
     }
   
     section#inicial div {
-      margin: 3em;
+      margin: 2em;
     }
   
     section#inicial h1 {
       margin-bottom: 0.2em;
-      font-size: 7rem;
+      font-size: 3rem;
       color: #ad8524;
       border: #544119 1px;
     }
@@ -1248,8 +1166,10 @@
   
     .botao {
       font-size: 0.8em;
-      width: 300px;
-      height: 70px;
+      padding: 5px;
+      margin: 5px;
+      width: 100px;
+      height: 30px;
       border-radius: 20px;
       background: rgb(210, 172, 72);
       background: -moz-linear-gradient(
@@ -1277,12 +1197,13 @@
     }
   
     section .bg {
-      background-color: rgb(49, 49, 49);
-      padding: 5px;
+        background-color: rgb(49, 49, 49);
+        margin: 0;
     }
   
     section .tri-flex {
       display: flex;
+      flex-direction: column;
       margin: 3em;
     }
   
@@ -1307,46 +1228,47 @@
       opacity: 1;
       transform: translateY(0px);
       transition: all 2s;
-      margin: 5px;
+      margin-top: 5px;
     }
     .visivel-tri2 {
       opacity: 1;
       transform: translateY(0px);
       transition: all 3s;
-      margin: 5px;
+      margin-top: 5px;
     }
     .visivel-tri3 {
       opacity: 1;
       transform: translateY(0px);
       transition: all 4s;
-      margin: 5px;
+      margin-top: 5px;
     }
   
     section#Habilidades h1 {
-      font-size: 5rem;
+      font-size: 3rem;
       color: #ad8524;
       border: #544119 1px;
     }
   
     section#Habilidades h3 {
-      font-size: 1.2em;
+      font-size: 1.2rem;
       color: #ad8524;
       border: #544119 1px;
     }
   
     .espaço {
       background-color: rgb(210, 172, 72);
-      height: 200px;
+      height: 100px;
     }
   
     .amostras {
       border-radius: 0px;
       width: 100%;
       background-color: #969696;
+      padding: 30px 0px 30px 0px;
     }
   
     .amostras img {
-      width: 50%;
+      width: 100%;
       height: auto;
     }
   
@@ -1364,6 +1286,7 @@
   
     .amostras div {
       display: flex;
+      flex-direction: column;
       justify-content: space-evenly;
       margin: 3px;
     }
@@ -1371,7 +1294,7 @@
     .titulo {
       text-align: center;
       margin-bottom: 0.2em;
-      font-size: 5em;
+      font-size: 3em;
       color: #ad8524;
       border: #544119 1px;
     }
@@ -1379,15 +1302,16 @@
     section#servicos .bg {
       background-color: #969696;
       margin: 5px;
-      padding: 100px;
+      padding: 10px 10px 10px 10px;
       color: #ddd;
       margin-left: 30%;
-      width: 59.5%;
+      width: 65%;
       display: grid;
       grid-template-areas:
-        "header header"
-        "primeiro segundo"
-        "terceiro terceiro";
+        "header"
+        "primeiro"
+        "segundo"
+        "terceiro";
     }
   
     section#servicos {
@@ -1398,24 +1322,24 @@
     }
   
     section#servicos h1 {
-      font-size: 3em;
+      font-size: 2em;
       color: #ad8524;
       border: #544119 1px;
     }
   
     section#servicos h3 {
-      font-size: 2em;
+      font-size: 1em;
       color: #ad8524;
       border: #544119 1px;
     }
-    section#servicos h3 {
-      font-size: 2em;
-      color: #ad8524;
-      border: #544119 1px;
-    }
+
     .quadrado-div {
-      width: 60%;
+      width: 65%;
     }
+
+    .retagulo-div{
+        width: 65%;
+      }
   
     #titulo-servicos {
       grid-area: header;
