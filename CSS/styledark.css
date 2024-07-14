@@ -569,8 +569,13 @@ body.darkmode {
     padding: 30px 0px 30px 0px;
   }
 
+  .amostras #bg{
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+  }
   .amostras img {
-    width: 50%;
+    width: 100%;
     height: auto;
   }
 
@@ -1345,6 +1350,12 @@ button {
       padding: 30px 0px 30px 0px;
     }
 
+    .amostras #bg{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+   }
+    
     .amostras img {
       width: 100%;
       height: auto;
@@ -2034,6 +2045,12 @@ button {
       padding: 30px 0px 30px 0px;
     }
 
+    .amostras #bg{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+   }
+    
     .amostras img {
       width: 100%;
       height: auto;
