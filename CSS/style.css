@@ -572,6 +572,7 @@ section#Habilidades h3 {
 .amostras {
   border-radius: 0px;
   width: 100%;
+  padding: 30px 0px 30px 0px;
   background-color: #969696;
 }
 
@@ -675,7 +676,16 @@ section#servicos h3 {
   border: #ddd 2px;
   border-radius: 30%;
 }
-
+.acao{
+  box-shadow: #000 0px 5px 5px 3px;
+}
+.acao:hover{
+   font-size: var(--toggle-size + 5px);
+}
+.acao:active{
+  box-shadow: #000 0px 0px 0px;
+  transition: 1ms;
+}
 /*main*/
 /*animações*/
 footer {
@@ -1481,7 +1491,16 @@ button {
     border: #ddd 2px;
     border-radius: 30%;
   }
-  
+  .acao{
+    box-shadow: #000 0px 5px 5px 3px;
+  }
+  .acao:hover{
+     font-size: var(--toggle-size + 5px);
+  }
+  .acao:active{
+    box-shadow: #000 0px 0px 0px;
+    transition: 1ms;
+  }
   /*main*/
   /*animações*/
   footer {
@@ -2292,7 +2311,16 @@ section#servicos h3 {
   border: #ddd 2px;
   border-radius: 30%;
 }
-
+.acao{
+  box-shadow: #000 0px 5px 5px 3px;
+}
+.acao:hover{
+   font-size: var(--toggle-size + 5px);
+}
+.acao:active{
+  box-shadow: #000 0px 0px 0px;
+  transition: 1ms;
+}
 /*main*/
 /*animações*/
 footer {

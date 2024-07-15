@@ -676,97 +676,19 @@ body.darkmode {
     bottom: 0px;
     transition: width 0.5s ease;
   }
-  
+  .acao{
+    box-shadow: #000 0px 5px 5px 3px;
+  }
+  .acao:hover{
+     font-size: var(--toggle-size + 5px);
+  }
+  .acao:active{
+    box-shadow: #000 0px 0px 0px;
+    transition: 1ms;
+  }
   /*main*/
 } /*fechamento do modo escuro*/
-/*animações*/
-footer {
-  position: relative;
-  display: flex;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 90px;
-  padding-top: 20px;
-  margin-top: 10px;
-  color: #ad8524;
-  text-align: center;
-  font-size: small;
-  font-family: sans-serif;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: space-between;
-  align-items: stretch;
-}
 
-footer .icone {
-  width: 20%;
-  padding: 0;
-}
-.cp {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 10px;
-  left: 100px;
-}
-footer h5 {
-  margin: 0;
-}
-footer h4 {
-  color: #ad8524;
-}
-footer sub {
-  color: #ad8524;
-}
-/*Copyright - 2024 Lokesh1379 (C Lokesh) */
-.parent {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.child {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-style: preserve-3d;
-  transition: all 0.5s ease-in-out;
-  border-radius: 50%;
-  margin: 0 5px;
-  background-color: #ddd;
-}
-.darkmode#github{
-  fill: white;
-}
-.child:hover {
-  background-color: #ddd;
-  background-position: -100px 100px, -100px 100px;
-  transform: rotate3d(0.5, 1, 0, 30deg);
-  transform: perspective(180px) rotateX(60deg) translateY(2px);
-  box-shadow: 0px 10px 10px rgb(1, 49, 182);
-}
-
-button {
-  border: none;
-  background-color: transparent;
-  font-size: 20px;
-}
-
-.button:hover {
-  width: inherit;
-  height: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg)
-    translateY(2px);
-  border-radius: 50%;
-}
 }
 @media screen and (min-width: 767px) and (max-width: 1024px) {
   /*DARKMODE*/
@@ -1458,7 +1380,16 @@ button {
       bottom: 0px;
       transition: width 0.5s ease;
     }
-
+    .acao{
+      box-shadow: #fff 0px 5px 5px 3px;
+    }
+    .acao:hover{
+       font-size: var(--toggle-size + 5px);
+    }
+    .acao:active{
+      box-shadow: #fff 0px 0px 0px;
+      transition: 1ms;
+    }
     /*main*/
   } /*fechamento do modo escuro*/
 }
@@ -2153,7 +2084,105 @@ button {
       bottom: 0px;
       transition: width 0.5s ease;
     }
-
+    .acao{
+      box-shadow: #fff 0px 5px 5px 3px;
+    }
+    .acao:hover{
+       font-size: var(--toggle-size + 5px);
+    }
+    .acao:active{
+      box-shadow: #fff 0px 0px 0px;
+      transition: 1ms;
+    }
     /*main*/
   } /*fechamento do modo escuro*/
+
+}
+/*animações*/
+footer {
+  position: relative;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  padding-top: 20px;
+  margin-top: 10px;
+  color: #ad8524;
+  text-align: center;
+  font-size: small;
+  font-family: sans-serif;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: stretch;
+}
+
+footer .icone {
+  width: 20%;
+  padding: 0;
+}
+.cp {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  left: 100px;
+}
+footer h5 {
+  margin: 0;
+}
+footer h4 {
+  color: #ad8524;
+}
+footer sub {
+  color: #ad8524;
+}
+/*Copyright - 2024 Lokesh1379 (C Lokesh) */
+.parent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #ddd;
+}
+.darkmode#github{
+  fill: white;
+}
+.child:hover {
+  background-color: #ddd;
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+  transform: perspective(180px) rotateX(60deg) translateY(2px);
+  box-shadow: 0px 10px 10px rgb(1, 49, 182);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.button:hover {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg)
+    translateY(2px);
+  border-radius: 50%;
 }
