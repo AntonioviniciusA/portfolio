@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Preço de Desenvolvimento de Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #333;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #181818;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form{
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            
+        }
+
+        h1 {
+            color: #ad8524;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #ad8524;
+        }
+
+        input[type="number"] {
+            width: 90%;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ad8524;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 96%;
+        }
+
+        button:hover {
+            background-color: #bf9c38;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Preço de Desenvolvimento de Site</h1>
+        <form id="calcForm">
+            <label for="quantidadeHoras">Quantidade de Horas</label>
+            <input type="number" id="quantidadeHoras" name="quantidadeHoras" required>
+
+            <label for="taxaHoraria">Taxa Horária (R$)</label>
+            <input type="number" id="taxaHoraria" name="taxaHoraria" required>
+
+            <label for="custosAdicionais">Custos Adicionais (R$)</label>
+            <input type="number" id="custosAdicionais" name="custosAdicionais" required>
+
+            <label for="margemLucroPercentual">Margem de Lucro (%)</label>
+            <input type="number" id="margemLucroPercentual" name="margemLucroPercentual" required>
+
+            <label for="descontoPercentual">Desconto (%)</label>
+            <input type="number" id="descontoPercentual" name="descontoPercentual">
+
+            <button type="submit">Calcular</button>
+        </form>
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('calcForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let quantidadeHoras = parseFloat(document.getElementById('quantidadeHoras').value);
+            let taxaHoraria = parseFloat(document.getElementById('taxaHoraria').value);
+            let custosAdicionais = parseFloat(document.getElementById('custosAdicionais').value);
+            let margemLucroPercentual = parseFloat(document.getElementById('margemLucroPercentual').value);
+            let descontoPercentual = parseFloat(document.getElementById('descontoPercentual').value) || 0;
+
+            let resultado = calcularPrecoDesenvolvimentoSite(quantidadeHoras, taxaHoraria, custosAdicionais, margemLucroPercentual, descontoPercentual);
+
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerHTML = `
+                <p>Custo Total (sem adicionais): R$ ${resultado.custoTotal.toFixed(2)}</p>
+                <p>Custo Total (com adicionais): R$ ${resultado.custoTotalComAdicionais.toFixed(2)}</p>
+                <p>Margem de Lucro: R$ ${resultado.margemLucro.toFixed(2)}</p>
+                <p>Preço Antes do Desconto: R$ ${resultado.precoAntesDesconto.toFixed(2)}</p>
+                <p>Valor do Desconto: R$ ${resultado.valorDesconto.toFixed(2)}</p>
+                <p>Preço Final (com desconto): R$ ${resultado.precoFinal.toFixed(2)}</p>
+            `;
+        });
+
+        function calcularPrecoDesenvolvimentoSite(quantidadeHoras, taxaHoraria, custosAdicionais, margemLucroPercentual, descontoPercentual) {
+            let custoTotal = quantidadeHoras * taxaHoraria;
+            
+            let custoTotalComAdicionais = custoTotal + custosAdicionais;
+            
+            let margemLucro = (margemLucroPercentual / 100) * custoTotalComAdicionais;
+            
+            let precoAntesDesconto = custoTotalComAdicionais + margemLucro;
+            
+            let valorDesconto = (descontoPercentual / 100) * precoAntesDesconto;
+            
+            let precoFinal = precoAntesDesconto - valorDesconto;
+            
+            return {
+                custoTotal: custoTotal,
+                custoTotalComAdicionais: custoTotalComAdicionais,
+                margemLucro: margemLucro,
+                precoAntesDesconto: precoAntesDesconto,
+                valorDesconto: valorDesconto,
+                precoFinal: precoFinal
+            };
+        }
+    </script>
+</body>
+</html>
