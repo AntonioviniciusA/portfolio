@@ -2138,6 +2138,10 @@ footer h4 {
 footer sub {
   color: #ad8524;
 }
+.redes{
+  padding: 5px;
+  margin-bottom: 55px;
+}
 /*Copyright - 2024 Lokesh1379 (C Lokesh) */
 .parent {
   width: 100%;
@@ -2146,7 +2150,6 @@ footer sub {
   justify-content: center;
   align-items: center;
 }
-
 .child {
   width: 60px;
   height: 60px;
