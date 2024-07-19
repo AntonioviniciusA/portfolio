@@ -44,7 +44,7 @@ article{
     align-items: stretch;
 }
 aside{
-    width: 30%;
+    width: 25%;
     margin: 5px;
 }
 section{
@@ -80,7 +80,6 @@ img#logotipo{
     height: auto;
     margin: 5px;
     padding: 5px;
-    
 }
 
 /*fechamento header*/
@@ -111,7 +110,9 @@ a#saibamais{
 aside img{
     width: 100%;
     height: auto;
+    max-height: fit-content;
 }
+
 section#Categorias{
     width: 89%;
     height: fit-content;
