@@ -27,6 +27,12 @@
       document.getElementById("licenca").style.display = "none";
       localStorage.setItem("licenseAccepted", "true");
     }
+    const licenseAccepted = localStorage.getItem('licenseAccepted');
+    if (licenseAccepted) {
+      console.log("User has accepted the license.");
+    } else {
+      console.log("User has not accepted the license.");
+    }
   </script>
   <header>
     <div id="bt">
