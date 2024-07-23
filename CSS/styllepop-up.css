@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+}
+#licenca {
+  display: none;
+}
+.licenca {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.licenca-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.licenca-header {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.licenca-body {
+  margin-bottom: 15px;
+}
+
+.licenca-footer {
+  text-align: right;
+}
+
+.licenca-footer .btnmodal {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.licenca-footer .btnmodal:hover {
+  background-color: #45a049;
+}
