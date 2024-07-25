@@ -1,5 +1,11 @@
-const { Person } = require("./person");
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "/index.css";
+import App from "/App";
 
-// require("./modules/path");
-
-const person = new Person("vinicius");
+const root = ReactDOM.createRoot(document.getElementById("ofertas"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
