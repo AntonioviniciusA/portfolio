@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.content {
+  display: block;
+}
 @media screen and (min-width: 1024px) {
   header {
     background-color: white;

@@ -12,29 +12,29 @@
   <title>Vinícius Alvino</title>
 </head>
 
-<body class="darkmode">
+<body class="darkmode content" id="mainContent">
   <script>
     window.onload = function () {
-      if (!localStorage.getItem("licenseAccepted")) {
-        document.getElementById("licenca").style.display = "none";
-      }
-      else {
-        document.getElementById("licenca").style.display = "block";
+      if (!localStorage.getItem('licenseAccepted')) {
+        var licenseWindow = window.open('license.html', 'License Agreement', 'width=600,height=400');
+        var checkLicense = setInterval(function () {
+          if (localStorage.getItem('licenseAccepted')) {
+            clearInterval(checkLicense);
+            licenseWindow.close();
+            document.getElementById('mainContent').style.display = 'block';
+          }
+        }, 1000);
+      } else {
+        document.getElementById('mainContent').style.display = 'block';
       }
     };
-
-    function aceitarlicenca() {
-      document.getElementById("licenca").style.display = "none";
-      localStorage.setItem("licenseAccepted", "true");
-    }
-    const licenseAccepted = localStorage.getItem('licenseAccepted');
-    if (licenseAccepted) {
-      console.log("User has accepted the license.");
-    } else {
-      console.log("User has not accepted the license.");
+    function resetLocalStorage() {
+      localStorage.removeItem('licenseAccepted');
+      alert('Local Storage has been reset. Reload the page to check if the license pop-up appears.');
     }
   </script>
   <header>
+    <button onclick="resetLocalStorage()">Reset License Acceptance</button>
     <div id="bt">
       <label class="theme-switch">
         <input type="checkbox" class="theme-switch__checkbox" id="tema" checked>
