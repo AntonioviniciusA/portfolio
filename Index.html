@@ -28,13 +28,8 @@
         document.getElementById('mainContent').style.display = 'block';
       }
     };
-    function resetLocalStorage() {
-      localStorage.removeItem('licenseAccepted');
-      alert('Local Storage has been reset. Reload the page to check if the license pop-up appears.');
-    }
   </script>
   <header>
-    <button onclick="resetLocalStorage()">Reset License Acceptance</button>
     <div id="bt">
       <label class="theme-switch">
         <input type="checkbox" class="theme-switch__checkbox" id="tema" checked>
@@ -229,18 +224,6 @@
         <sub>Copyright© 2024 Vinícius Alvino</sub>
       </div>
   </footer>
-  <div id="licenca" class="licenca">
-    <div class="licenca-content">
-      <div class="licenca-header">Contrato de licenca</div>
-      <div class="licenca-body">
-        <p>Leia e aceite os termos do contrato de licença para continuar usando este site.</p>
-
-      </div>
-      <div class="licenca-footer">
-        <button class="btnmodal" onclick="aceitarlicenca()">Aceita</button>
-      </div>
-    </div>
-  </div>
   <div class="lineheader" id="lineheader"></div>
   <script src="JS/scrollline.js"></script>
   <script src="JS/Animação scroll.js"></script>
