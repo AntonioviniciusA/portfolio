@@ -440,7 +440,7 @@
     section#inicial {
       display: flex;
       text-align: left;
-      height: 1000px;
+      height: 700px;
       flex-direction: column;
       justify-content: center;
       align-items: stretch;
@@ -448,7 +448,7 @@
     }
 
     section#inicial div {
-      margin: 3em;
+      margin: 0em 3em 3em 3em;
     }
 
     section#inicial h1 {
