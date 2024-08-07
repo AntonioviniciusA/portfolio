@@ -589,11 +589,12 @@ html {
   .amostras #bg {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
     text-align: center;
   }
-
   .amostras img {
-    width: 100%;
+    width: 70%;
     height: auto;
   }
 
