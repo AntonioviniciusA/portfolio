@@ -577,6 +577,7 @@
       flex-wrap: wrap;
       align-content: space-around;
       text-align: center;
+      gap: 6px;
     }
     .amostras img {
       width: 70%;
@@ -596,7 +597,9 @@
     }
 
     .amostras div {
-      display: flex;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50%;
       justify-content: space-evenly;
       margin: 3px;
     }
