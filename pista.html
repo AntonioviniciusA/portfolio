@@ -338,15 +338,29 @@
             estacao1(); // Executa imediatamente
 
             setTimeout(() => {
-                estacao2(); // Executa após 2 segundos
-            }, 4000);
+                estacao2(); // Executa após 40000ms 
+            }, 30000);
 
             setTimeout(() => {
-                estacao3(); // Executa após 4 segundos
-            }, 6000);
+                estacao3(); //Executa após 60000ms 
+            }, 50000);
             setTimeout(() => {
-                estacao4(); // Executa após 4 segundos
-            }, 8000);
+                estacao4(); //Executa após 80000ms 
+            }, 60000);
+            setTimeout(() => {
+                estacao1();
+            }, 70000)
+
+            setTimeout(() => {
+                estacao2(); //Executa após 90000ms 
+            }, 120000);
+
+            setTimeout(() => {
+                estacao3();
+            }, 140000);
+            setTimeout(() => {
+                estacao4();
+            }, 160000);
         }
     </script>
     <footer>
