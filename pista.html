@@ -4,28 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    link
     <title>Pista em Cruz com Sinais</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background-color: #e0e0e0;
         }
 
-        .crossroad {
+        .Avenida {
             position: relative;
             width: 300px;
             height: 300px;
         }
 
-        .road {
+        .pista {
             position: absolute;
             background-color: #333;
         }
+
 
         .horizontal {
             width: 300px;
@@ -43,7 +43,7 @@
             transform: translateX(-50%);
         }
 
-        .signal {
+        .sinal {
             width: 20px;
             height: 20px;
             position: absolute;
@@ -77,20 +77,199 @@
         .sinalaberto {
             background-color: green;
         }
+
+        .faixa1 {
+            top: 10px;
+            left: 120px;
+            background-color: red;
+        }
+
+        .faixa2 {
+            top: 140px;
+            right: 50px;
+            background-color: red;
+            transform: rotate(90deg);
+        }
+
+        .faixa3 {
+            top: 140px;
+            left: 50px;
+            background-color: red;
+            transform: rotate(90deg);
+        }
+
+        .faixa4 {
+            bottom: 10px;
+            right: 120px;
+            background-color: red;
+        }
+
+        .faixaunitaria {
+            width: 3px;
+            height: 100%;
+            background-color: white;
+        }
+
+        .faixa {
+            position: absolute;
+            width: 50px;
+            height: 10px;
+            background-color: #666;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .faixaaberta {
+            background-color: green;
+        }
+
+        footer {
+            position: absolute;
+            display: flex;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            padding-top: 20px;
+            margin-top: 10px;
+            color: #ad8524;
+            text-align: center;
+            font-size: small;
+            font-family: sans-serif;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-between;
+            align-items: stretch;
+        }
+
+        footer .icone {
+            width: 20%;
+            padding: 0;
+        }
+
+        .cp {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 10px;
+            left: 100px;
+        }
+
+        footer h5 {
+            margin: 0;
+        }
+
+        footer h4 {
+            color: #ad8524;
+        }
+
+        footer sub {
+            color: #ad8524;
+        }
+
+        .redes {
+            padding: 5px;
+            margin-bottom: 55px;
+        }
+
+        /*Copyright - 2024 Lokesh1379 (C Lokesh) */
+        .parent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .child {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease-in-out;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: #ddd;
+        }
+
+        .darkmode#github {
+            fill: white;
+        }
+
+        .child:hover {
+            background-color: #ddd;
+            background-position: -100px 100px, -100px 100px;
+            transform: rotate3d(0.5, 1, 0, 30deg);
+            transform: perspective(180px) rotateX(60deg) translateY(2px);
+            box-shadow: 0px 10px 10px rgb(1, 49, 182);
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+        }
+
+        .button:hover {
+            width: inherit;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
+            border-radius: 50%;
+        }
     </style>
 </head>
 
 <body class="darkmode">
-    <div class="crossroad">
-        <div class="road horizontal"></div>
-        <div class="road vertical"></div>
+    <div class="Avenida">
+        <div class="pista horizontal"></div>
+        <div class="pista vertical"></div>
 
         <!-- Sinais de Trânsito -->
-        <div id="sinal1" class="signal sinal1">1</div>
+        <!--sinal 1-->
         <button onclick="runcode()"> abrir sinal 1</button>
-        <div id="sinal2" class="signal sinal2">2</div>
-        <div id="sinal3" class="signal sinal3">3</div>
-        <div id="sinal4" class="signal sinal4">4</div>
+        <div id="sinal1" class="sinal sinal1">1</div>
+        <div id="faixa1" class="faixa faixa1">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+        <!--sinal 2-->
+        <div id="sinal2" class="sinal sinal2">2</div>
+        <div id="faixa2" class="faixa faixa2">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+        <!--sinal 2-->
+        <div id="sinal3" class="sinal sinal3">3</div>
+        <div id="faixa3" class="faixa faixa3">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+        <!--sinal 2-->
+        <div id="sinal4" class="sinal sinal4">4</div>
+        <div id="faixa4" class="faixa  faixa4">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
     </div>
     <script>
         function estacao1() {
@@ -99,18 +278,19 @@
             const sinal3 = document.getElementById('sinal3');
             const sinal4 = document.getElementById('sinal4');
 
-            sinal1.classList.add('sinalaberto')
+            sinal1.classList.add('sinalaberto');
             sinal4.classList.add('sinalaberto');
-            sinal3.classList.remove('sinalaberto')
-            sinal2.classList.remove('sinalaberto')
+            sinal3.classList.remove('sinalaberto');
+            sinal2.classList.remove('sinalaberto');
         }
         function estacao2() {
             const sinal1 = document.getElementById('sinal1');
             const sinal2 = document.getElementById('sinal2');
             const sinal3 = document.getElementById('sinal3');
             const sinal4 = document.getElementById('sinal4');
-            sinal1.classList.remove('sinalaberto')
-            sinal3.classList.add('sinalaberto')
+
+            sinal1.classList.remove('sinalaberto');
+            sinal3.classList.add('sinalaberto');
         }
 
         function estacao3() {
@@ -118,9 +298,28 @@
             const sinal2 = document.getElementById('sinal2');
             const sinal3 = document.getElementById('sinal3');
             const sinal4 = document.getElementById('sinal4');
-            sinal1.classList.remove('sinalaberto')
-            sinal3.classList.remove('sinalaberto')
-            sinal2.classList.add('sinalaberto')
+            sinal1.classList.remove('sinalaberto');
+            sinal3.classList.remove('sinalaberto');
+            sinal2.classList.add('sinalaberto');
+        }
+        function estacao4() {
+            const sinal1 = document.getElementById('sinal1');
+            const sinal2 = document.getElementById('sinal2');
+            const sinal3 = document.getElementById('sinal3');
+            const sinal4 = document.getElementById('sinal4');
+            const faixa1 = document.getElementById('faixa1');
+            const faixa2 = document.getElementById('faixa2');
+            const faixa3 = document.getElementById('faixa3');
+            const faixa4 = document.getElementById('faixa4');
+
+            sinal1.classList.remove('sinalaberto');
+            sinal3.classList.remove('sinalaberto');
+            sinal2.classList.remove('sinalaberto');
+            sinal4.classList.remove('sinalaberto');
+            faixa1.classList.add('faixaaberta');
+            faixa3.classList.add('faixaaberta');
+            faixa2.classList.add('faixaaberta');
+            faixa4.classList.add('faixaaberta');
         }
 
         function runcode() {
@@ -128,23 +327,25 @@
 
             setTimeout(() => {
                 estacao2(); // Executa após 2 segundos
-            }, 2000);
+            }, 4000);
 
             setTimeout(() => {
                 estacao3(); // Executa após 4 segundos
-            }, 4000);
+            }, 6000);
+            setTimeout(() => {
+                estacao4(); // Executa após 4 segundos
+            }, 8000);
         }
     </script>
-    <a href="">https://vininiciusalvino.netlify.app/</a>
     <footer>
         <div>
-            <h4>PARA MAIS NEGOCIAÇÕES: <br>
+            <h4> <a href="https://vininiciusalvino.netlify.app/"> Vinícius alvino</a> <br>
                 Antoniovinicius_@outlook.com</h4>
         </div>
 
         </div>
         <div>
-            <h4>O SEU SITE COM CAPRICHO!</h4>
+            <h4>SITE FEITO PARA FINS DIDÁTICOS!</h4>
         </div>
         <!--Copyright - 2024 Lokesh1379 (C Lokesh)  -->
         <div class="redes">
