@@ -278,10 +278,20 @@
             const sinal3 = document.getElementById('sinal3');
             const sinal4 = document.getElementById('sinal4');
 
+            const faixa1 = document.getElementById('faixa1');
+            const faixa2 = document.getElementById('faixa2');
+            const faixa3 = document.getElementById('faixa3');
+            const faixa4 = document.getElementById('faixa4');
+
             sinal1.classList.add('sinalaberto');
             sinal4.classList.add('sinalaberto');
             sinal3.classList.remove('sinalaberto');
             sinal2.classList.remove('sinalaberto');
+
+            faixa1.classList.remove('faixaaberta');
+            faixa3.classList.remove('faixaaberta');
+            faixa2.classList.remove('faixaaberta');
+            faixa4.classList.remove('faixaaberta');
         }
         function estacao2() {
             const sinal1 = document.getElementById('sinal1');
@@ -316,10 +326,7 @@
             sinal3.classList.remove('sinalaberto');
             sinal2.classList.remove('sinalaberto');
             sinal4.classList.remove('sinalaberto');
-            faixa1.classList.add('faixaaberta');
-            faixa3.classList.add('faixaaberta');
-            faixa2.classList.add('faixaaberta');
-            faixa4.classList.add('faixaaberta');
+
         }
 
         function runcode() {
