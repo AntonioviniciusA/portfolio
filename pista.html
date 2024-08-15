@@ -230,6 +230,7 @@
 </head>
 
 <body class="darkmode">
+    <h1 id="cronometro">0h 0m 0s</h1>
     <div class="Avenida">
         <div class="pista horizontal"></div>
         <div class="pista vertical"></div>
@@ -274,6 +275,7 @@
         </div>
     </div>
     <script>
+
         function estacao1() {
             const sinal1 = document.getElementById('sinal1');
             const sinal2 = document.getElementById('sinal2');
@@ -347,9 +349,34 @@
             faixa4.classList.add('faixaaberta');
 
         }
+        let startTime;
+        let intervalId;
 
+        function startFunction() {
+            startTime = Date.now();
+            intervalId = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            const elapsedTime = Date.now() - startTime;
+            const seconds = Math.floor((elapsedTime / 1000) % 60);
+            const minutes = Math.floor((elapsedTime / 1000 / 60) % 60);
+            const hours = Math.floor((elapsedTime / 1000 / 60 / 60) % 24);
+
+            // Atualiza o conteúdo do elemento HTML com o tempo decorrido
+            document.getElementById("cronometro").textContent = `${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        function stopTimer() {
+            clearInterval(intervalId);
+            console.log("Cronômetro parado!");
+        }
         function runcode() {
+
             estacao1(); // Executa imediatamente
+            setTimeout(() => {
+                startFunction()
+            }, 1)
 
             setTimeout(() => {
                 estacao2(); // Executa após 40000ms 
@@ -375,6 +402,9 @@
             setTimeout(() => {
                 estacao4();
             }, 160000);
+            setTimeout(() => {
+                stopTimer
+            }, 170000)
         }
     </script>
     <footer>
