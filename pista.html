@@ -275,17 +275,18 @@
         </div>
     </div>
     <script>
+        //constantes de cada elemento 
+        const sinal1 = document.getElementById('sinal1');
+        const sinal2 = document.getElementById('sinal2');
+        const sinal3 = document.getElementById('sinal3');
+        const sinal4 = document.getElementById('sinal4');
+        const faixa1 = document.getElementById('faixa1');
+        const faixa2 = document.getElementById('faixa2');
+        const faixa3 = document.getElementById('faixa3');
+        const faixa4 = document.getElementById('faixa4');
 
         function estacao1() {
-            const sinal1 = document.getElementById('sinal1');
-            const sinal2 = document.getElementById('sinal2');
-            const sinal3 = document.getElementById('sinal3');
-            const sinal4 = document.getElementById('sinal4');
 
-            const faixa1 = document.getElementById('faixa1');
-            const faixa2 = document.getElementById('faixa2');
-            const faixa3 = document.getElementById('faixa3');
-            const faixa4 = document.getElementById('faixa4');
 
             sinal1.classList.add('sinalaberto');
             sinal4.classList.add('sinalaberto');
@@ -302,10 +303,7 @@
 
         }
         function estacao2() {
-            const sinal1 = document.getElementById('sinal1');
-            const sinal2 = document.getElementById('sinal2');
-            const sinal3 = document.getElementById('sinal3');
-            const sinal4 = document.getElementById('sinal4');
+
 
             sinal1.classList.remove('sinalaberto');
             sinal3.classList.add('sinalaberto');
@@ -315,34 +313,29 @@
         }
 
         function estacao3() {
-            const sinal1 = document.getElementById('sinal1');
-            const sinal2 = document.getElementById('sinal2');
-            const sinal3 = document.getElementById('sinal3');
-            const sinal4 = document.getElementById('sinal4');
+            //fecha os sinais 3 e 1
             sinal1.classList.remove('sinalaberto');
-            sinal3.classList.remove('sinalaberto');
+            sinal3.classList.remove('sinalaberto2');
+            //abre o sinal 2
             sinal2.classList.add('sinalaberto');
-
+            //abre as faixas 1 e 3
             faixa1.classList.add('faixaaberta');
             faixa3.classList.add('faixaaberta');
+            //fecha as faixas 2 e 4 
             faixa2.classList.remove('faixaaberta');
             faixa4.classList.remove('faixaaberta');
         }
         function estacao4() {
-            const sinal1 = document.getElementById('sinal1');
-            const sinal2 = document.getElementById('sinal2');
-            const sinal3 = document.getElementById('sinal3');
-            const sinal4 = document.getElementById('sinal4');
-            const faixa1 = document.getElementById('faixa1');
-            const faixa2 = document.getElementById('faixa2');
-            const faixa3 = document.getElementById('faixa3');
-            const faixa4 = document.getElementById('faixa4');
 
+
+            //remove as classes que deixa dos sinais verdes
             sinal1.classList.remove('sinalaberto');
             sinal3.classList.remove('sinalaberto');
             sinal2.classList.remove('sinalaberto');
             sinal4.classList.remove('sinalaberto');
 
+
+            //adiciona a classe que vai estilizar a faixa para ela ficar verde
             faixa1.classList.add('faixaaberta');
             faixa3.classList.add('faixaaberta');
             faixa2.classList.add('faixaaberta');
@@ -372,38 +365,38 @@
             console.log("Cronômetro parado!");
         }
         function runcode() {
-
+            //roda o codigo com base em um conometro para cada ação de fechar o sinal e abrir seja no momento certo
             estacao1(); // Executa imediatamente
             setTimeout(() => {
                 startFunction()
             }, 1)
 
             setTimeout(() => {
-                estacao2(); // Executa após 40000ms 
+                estacao2(); // Executa após 30000ms 
             }, 30000);
 
             setTimeout(() => {
-                estacao3(); //Executa após 60000ms 
+                estacao3(); //Executa após 50000ms 
             }, 50000);
             setTimeout(() => {
-                estacao4(); //Executa após 80000ms 
+                estacao4(); //Executa após 60000ms 
             }, 60000);
             setTimeout(() => {
-                estacao1();
+                estacao1(); //Executa após 70000ms 
             }, 70000)
 
             setTimeout(() => {
-                estacao2(); //Executa após 90000ms 
+                estacao2(); //Executa após 120000ms 
             }, 120000);
 
             setTimeout(() => {
-                estacao3();
+                estacao3(); //Executa após 140000ms 
             }, 140000);
             setTimeout(() => {
-                estacao4();
+                estacao4(); //Executa após 160000ms 
             }, 160000);
             setTimeout(() => {
-                stopTimer
+                stopTimer   //para o timer
             }, 170000)
         }
     </script>
