@@ -602,6 +602,7 @@
       grid-template-rows: 50%;
       justify-content: space-evenly;
       margin: 3px;
+      gap: 10px;
     }
 
     .titulo {
