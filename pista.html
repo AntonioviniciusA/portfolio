@@ -288,28 +288,31 @@
 
         function estacao1() {
 
-
+            //abre o sinal 1 e 4
             sinal1.classList.add('sinalaberto');
             sinal4.classList.add('sinalaberto');
+            //fecha o sinal 3 e 2
             sinal3.classList.remove('sinalaberto');
             sinal2.classList.remove('sinalaberto');
-
+            //fecha todas as faixas
             faixa1.classList.remove('faixaaberta');
             faixa3.classList.remove('faixaaberta');
             faixa2.classList.remove('faixaaberta');
             faixa4.classList.remove('faixaaberta');
-
+            //abre a faixa 3 e 2
             faixa3.classList.add('faixaaberta');
             faixa2.classList.add('faixaaberta');
 
         }
         function estacao2() {
 
-
+            //fecha os sinais 1
             sinal1.classList.remove('sinalaberto');
+            //abre o sinal 3
             sinal3.classList.add('sinalaberto');
-
+            //fecha as faixas 3
             faixa3.classList.remove('faixaaberta');
+            //abre as faixas 1 
             faixa1.classList.add('faixaaberta');
         }
 
@@ -387,17 +390,17 @@
             }, 70000)
 
             setTimeout(() => {
-                estacao2(); //Executa após 120000ms 
+                estacao2(); //Executa após 100000ms 
             }, 100000);
 
             setTimeout(() => {
-                estacao3(); //Executa após 140000ms 
+                estacao3(); //Executa após 120000ms 
             }, 120000);
             setTimeout(() => {
-                estacao4(); //Executa após 160000ms 
+                estacao4(); //Executa após 140000ms 
             }, 140000);
             setTimeout(() => {
-                stopTimer   //para o timer
+                stopTimer   //para o timer após 150000ms
             }, 150000)
         }
     </script>
