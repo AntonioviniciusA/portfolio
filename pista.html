@@ -291,6 +291,10 @@
         let startTime;
         let intervalId;
 
+        // O codigo é definido por quatro estados, onde cada estado acontece um evento de fecha e abrir os sinais e faixar.
+        // as faixas são abertas pela classe "faixaaberta" que define a cor verde, eventualmente faixa aberta
+        // os sinais são abertos pela classe "sinalaberto" que define a cor verde, eventualmente sinal aberto
+        // e ambos fechados quando suas determinadas classes "...abertas" são retiradas
         function estacao1() {
 
             //abre o sinal 1 e 4
