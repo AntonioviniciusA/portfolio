@@ -114,7 +114,7 @@
             position: absolute;
             width: 50px;
             height: 10px;
-            background-color: #666;
+            background-color: #ff0000;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -125,6 +125,8 @@
         .faixaaberta {
             background-color: green;
         }
+
+
 
         footer {
             position: absolute;
@@ -292,6 +294,10 @@
             faixa3.classList.remove('faixaaberta');
             faixa2.classList.remove('faixaaberta');
             faixa4.classList.remove('faixaaberta');
+
+            faixa3.classList.add('faixaaberta');
+            faixa2.classList.add('faixaaberta');
+
         }
         function estacao2() {
             const sinal1 = document.getElementById('sinal1');
@@ -301,6 +307,9 @@
 
             sinal1.classList.remove('sinalaberto');
             sinal3.classList.add('sinalaberto');
+
+            faixa3.classList.remove('faixaaberta');
+            faixa1.classList.add('faixaaberta');
         }
 
         function estacao3() {
@@ -311,6 +320,11 @@
             sinal1.classList.remove('sinalaberto');
             sinal3.classList.remove('sinalaberto');
             sinal2.classList.add('sinalaberto');
+
+            faixa1.classList.add('faixaaberta');
+            faixa3.classList.add('faixaaberta');
+            faixa2.classList.remove('faixaaberta');
+            faixa4.classList.remove('faixaaberta');
         }
         function estacao4() {
             const sinal1 = document.getElementById('sinal1');
