@@ -239,7 +239,7 @@
         <!--sinal 1-->
         <button id="startBtn">START</button>
         <br>
-        <button id="stopBtn" disabled>STOP</button>
+        <button id="stopBtn" onclick="stopChain()">STOP</button>
         <div id="sinal1" class="sinal sinal1">1</div>
         <div id="faixa1" class="faixa faixa1">
             <div class="faixaunitaria"></div>
@@ -249,7 +249,7 @@
             <div class="faixaunitaria"></div>
         </div>
         <!--sinal 2-->
-        <div id="sinal2" class="sinal sinal2">2</div>
+        <div id="sinal2" class="sinal sinal2">2</div>''
         <div id="faixa2" class="faixa faixa2">
             <div class="faixaunitaria"></div>
             <div class="faixaunitaria"></div>
@@ -288,6 +288,8 @@
         const faixa3 = document.getElementById('faixa3');
         const faixa4 = document.getElementById('faixa4');
         let running = false;
+        let startTime;
+        let intervalId;
 
         function estacao1() {
 
@@ -349,12 +351,12 @@
             faixa4.classList.add('faixaaberta');
 
         }
-        let startTime;
-        let intervalId;
+
 
         function startFunction() {
             startTime = Date.now();
             intervalId = setInterval(updateTimer, 1000);
+            console.log('conometro iniciado ')
         }
 
         function updateTimer() {
@@ -371,25 +373,18 @@
             clearInterval(intervalId);
             console.log("Cronômetro parado!");
         }
-        const startChain = async () => {
+        const startChain = () => {
             if (running) return;
             running = true;
             document.getElementById('startBtn').disabled = true;
-            document.getElementById('stopBtn').disabled = false;
-
-            runChain();
-        };
-        const stopChain = () => {
-            running = false;
-            document.getElementById('startBtn').disabled = false;
             document.getElementById('stopBtn').disabled = true;
 
-            stopTimer()
+            runChain();
         };
         const runChain = async () => {
             while (running) {
                 runcode();
-                await new Promise; // Espera 1 segundo antes de executar a próxima função
+                await new Promise;
             }
         }
         function runcode() {
@@ -414,8 +409,10 @@
                 runcode(); //Executa após 60000ms 
             }, 70000);
         }
+        if (running == false) {
+            console.log("stop")
+        }
         document.getElementById('startBtn').addEventListener('click', startChain);
-        document.getElementById('stopBtn').addEventListener('click', stopChain);
     </script>
     <footer>
         <div>
