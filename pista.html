@@ -237,7 +237,9 @@
 
         <!-- Sinais de Trânsito -->
         <!--sinal 1-->
-        <button onclick="runcode()">START</button>
+        <button id="startBtn">START</button>
+        <br>
+        <button id="stopBtn" disabled>STOP</button>
         <div id="sinal1" class="sinal sinal1">1</div>
         <div id="faixa1" class="faixa faixa1">
             <div class="faixaunitaria"></div>
@@ -285,6 +287,7 @@
         const faixa2 = document.getElementById('faixa2');
         const faixa3 = document.getElementById('faixa3');
         const faixa4 = document.getElementById('faixa4');
+        let running = false;
 
         function estacao1() {
 
@@ -368,11 +371,33 @@
             clearInterval(intervalId);
             console.log("Cronômetro parado!");
         }
+        const startChain = async () => {
+            if (running) return;
+            running = true;
+            document.getElementById('startBtn').disabled = true;
+            document.getElementById('stopBtn').disabled = false;
+
+            runChain();
+        };
+        const stopChain = () => {
+            running = false;
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('stopBtn').disabled = true;
+
+            stopTimer()
+        };
+        const runChain = async () => {
+            while (running) {
+                runcode();
+                await new Promise; // Espera 1 segundo antes de executar a próxima função
+            }
+        }
         function runcode() {
             //roda o codigo com base em um conometro para cada ação de fechar o sinal e abrir seja no momento certo
-            estacao1(); // Executa imediatamente
+            startFunction()// Executa imediatamente
+
             setTimeout(() => {
-                startFunction()
+                estacao1();
             }, 1)
 
             setTimeout(() => {
@@ -386,23 +411,11 @@
                 estacao4(); //Executa após 60000ms 
             }, 60000);
             setTimeout(() => {
-                estacao1(); //Executa após 70000ms 
-            }, 70000)
-
-            setTimeout(() => {
-                estacao2(); //Executa após 100000ms 
-            }, 100000);
-
-            setTimeout(() => {
-                estacao3(); //Executa após 120000ms 
-            }, 120000);
-            setTimeout(() => {
-                estacao4(); //Executa após 140000ms 
-            }, 140000);
-            setTimeout(() => {
-                stopTimer   //para o timer após 150000ms
-            }, 150000)
+                runcode(); //Executa após 60000ms 
+            }, 70000);
         }
+        document.getElementById('startBtn').addEventListener('click', startChain);
+        document.getElementById('stopBtn').addEventListener('click', stopChain);
     </script>
     <footer>
         <div>
