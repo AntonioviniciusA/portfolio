@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pista em Cruz com Sinais</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0;
+        }
+
+        .Avenida {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .pista {
+            position: absolute;
+            background-color: #333;
+        }
+
+
+        .horizontal {
+            width: 300px;
+            height: 50px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .vertical {
+            width: 50px;
+            height: 300px;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        .sinal {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .sinal3 {
+            top: 140px;
+            left: 100px;
+            background-color: red;
+        }
+
+        .sinal2 {
+            top: 140px;
+            right: 100px;
+            background-color: red;
+        }
+
+        .sinal1 {
+            top: 40px;
+            left: 140px;
+            background-color: red;
+        }
+
+        .sinal4 {
+            bottom: 40px;
+            right: 140px;
+            background-color: red;
+        }
+
+        .sinalaberto {
+            background-color: green;
+        }
+
+        .faixa1 {
+            top: 10px;
+            left: 120px;
+            background-color: red;
+        }
+
+        .faixa2 {
+            top: 140px;
+            right: 50px;
+            background-color: red;
+            transform: rotate(90deg);
+        }
+
+        .faixa3 {
+            top: 140px;
+            left: 50px;
+            background-color: red;
+            transform: rotate(90deg);
+        }
+
+        .faixa4 {
+            bottom: 10px;
+            right: 120px;
+            background-color: red;
+        }
+
+        .faixaunitaria {
+            width: 3px;
+            height: 100%;
+            background-color: white;
+        }
+
+        .faixa {
+            position: absolute;
+            width: 50px;
+            height: 10px;
+            background-color: #ff0000;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .faixaaberta {
+            background-color: green;
+        }
+
+
+
+        footer {
+            position: absolute;
+            display: flex;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            padding-top: 20px;
+            margin-top: 10px;
+            color: #ad8524;
+            text-align: center;
+            font-size: small;
+            font-family: sans-serif;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-between;
+            align-items: stretch;
+        }
+
+        footer .icone {
+            width: 20%;
+            padding: 0;
+        }
+
+        .cp {
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 10px;
+            left: 100px;
+        }
+
+        footer h5 {
+            margin: 0;
+        }
+
+        footer h4 {
+            color: #ad8524;
+        }
+
+        footer sub {
+            color: #ad8524;
+        }
+
+        .redes {
+            padding: 5px;
+            margin-bottom: 55px;
+        }
+
+        /*Copyright - 2024 Lokesh1379 (C Lokesh) */
+        .parent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .child {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease-in-out;
+            border-radius: 50%;
+            margin: 0 5px;
+            background-color: #ddd;
+        }
+
+        .darkmode#github {
+            fill: white;
+        }
+
+        .child:hover {
+            background-color: #ddd;
+            background-position: -100px 100px, -100px 100px;
+            transform: rotate3d(0.5, 1, 0, 30deg);
+            transform: perspective(180px) rotateX(60deg) translateY(2px);
+            box-shadow: 0px 10px 10px rgb(1, 49, 182);
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 20px;
+        }
+
+        .button:hover {
+            width: inherit;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="darkmode">
+    <h1 id="cronometro">0h 0m 0s</h1>
+    <div class="Avenida">
+        <div class="pista horizontal"></div>
+        <div class="pista vertical"></div>
+
+        <!-- Sinais de Trânsito -->
+        <!--sinal 1-->
+        <button id="startBtn">START</button>
+        <br>
+        <button id="stopBtn" onclick="stopChain()">STOP</button>
+        <div id="sinal1" class="sinal sinal1">1</div>
+        <div id="faixa1" class="faixa faixa1">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+        <!--sinal 2-->
+        <div id="sinal2" class="sinal sinal2">2</div>''
+        <div id="faixa2" class="faixa faixa2">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+        <!--sinal 3-->
+        <div id="sinal3" class="sinal sinal3">3</div>
+        <div id="faixa3" class="faixa faixa3">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+        <!--sinal 4-->
+        <div id="sinal4" class="sinal sinal4">4</div>
+        <div id="faixa4" class="faixa  faixa4">
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+            <div class="faixaunitaria"></div>
+        </div>
+    </div>
+    <script>
+        //constantes de cada elemento 
+        const sinal1 = document.getElementById('sinal1');
+        const sinal2 = document.getElementById('sinal2');
+        const sinal3 = document.getElementById('sinal3');
+        const sinal4 = document.getElementById('sinal4');
+
+        const faixa1 = document.getElementById('faixa1');
+        const faixa2 = document.getElementById('faixa2');
+        const faixa3 = document.getElementById('faixa3');
+        const faixa4 = document.getElementById('faixa4');
+        let running = false;
+        let startTime;
+        let intervalId;
+
+        // O codigo é definido por quatro estados, onde cada estado acontece um evento de fecha e abrir os sinais e faixar.
+        // as faixas são abertas pela classe "faixaaberta" que define a cor verde, eventualmente faixa aberta
+        // os sinais são abertos pela classe "sinalaberto" que define a cor verde, eventualmente sinal aberto
+        // e ambos fechados quando suas determinadas classes "...abertas" são retiradas
+        function estacao1() {
+
+            //abre o sinal 1 e 4
+            sinal1.classList.add('sinalaberto');
+            sinal4.classList.add('sinalaberto');
+            //fecha o sinal 3 e 2
+            sinal3.classList.remove('sinalaberto');
+            sinal2.classList.remove('sinalaberto');
+            //fecha todas as faixas
+            faixa1.classList.remove('faixaaberta');
+            faixa3.classList.remove('faixaaberta');
+            faixa2.classList.remove('faixaaberta');
+            faixa4.classList.remove('faixaaberta');
+            //abre a faixa 3 e 2
+            faixa3.classList.add('faixaaberta');
+            faixa2.classList.add('faixaaberta');
+
+        }
+        function estacao2() {
+
+            //fecha os sinais 1
+            sinal1.classList.remove('sinalaberto');
+            //abre o sinal 3
+            sinal3.classList.add('sinalaberto');
+            //fecha as faixas 3
+            faixa3.classList.remove('faixaaberta');
+            //abre as faixas 1 
+            faixa1.classList.add('faixaaberta');
+        }
+
+        function estacao3() {
+            //fecha os sinais 3 e 1
+            sinal1.classList.remove('sinalaberto');
+            sinal3.classList.remove('sinalaberto');
+            //abre o sinal 2
+            sinal2.classList.add('sinalaberto');
+            //abre as faixas 1 e 3
+            faixa1.classList.add('faixaaberta');
+            faixa3.classList.add('faixaaberta');
+            //fecha as faixas 2 e 4 
+            faixa2.classList.remove('faixaaberta');
+            faixa4.classList.remove('faixaaberta');
+        }
+        function estacao4() {
+
+
+            //remove as classes que deixa dos sinais verdes
+            sinal1.classList.remove('sinalaberto');
+            sinal3.classList.remove('sinalaberto');
+            sinal2.classList.remove('sinalaberto');
+            sinal4.classList.remove('sinalaberto');
+
+
+            //adiciona a classe que vai estilizar a faixa para ela ficar verde
+            faixa1.classList.add('faixaaberta');
+            faixa3.classList.add('faixaaberta');
+            faixa2.classList.add('faixaaberta');
+            faixa4.classList.add('faixaaberta');
+
+        }
+
+
+        function startFunction() {
+            startTime = Date.now();
+            intervalId = setInterval(updateTimer, 1000);
+            console.log('conometro iniciado ')
+        }
+
+        function updateTimer() {
+            const elapsedTime = Date.now() - startTime;
+            const seconds = Math.floor((elapsedTime / 1000) % 60);
+            const minutes = Math.floor((elapsedTime / 1000 / 60) % 60);
+            const hours = Math.floor((elapsedTime / 1000 / 60 / 60) % 24);
+
+            // Atualiza o conteúdo do elemento HTML com o tempo decorrido
+            document.getElementById("cronometro").textContent = `${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        function stopTimer() {
+            clearInterval(intervalId);
+            console.log("Cronômetro parado!");
+        }
+        const startChain = () => {
+            if (running) return;
+            running = true;
+            document.getElementById('startBtn').disabled = true;
+            document.getElementById('stopBtn').disabled = true;
+
+            runChain();
+        };
+        const runChain = async () => {
+            while (running) {
+                runcode();
+                await new Promise;
+            }
+        }
+        function runcode() {
+            //roda o codigo com base em um conometro para cada ação de fechar o sinal e abrir seja no momento certo
+            startFunction()// Executa imediatamente
+
+            setTimeout(() => {
+                estacao1();
+            }, 1)
+
+            setTimeout(() => {
+                estacao2(); // Executa após 30000ms 
+            }, 30000);
+
+            setTimeout(() => {
+                estacao3(); //Executa após 50000ms 
+            }, 50000);
+            setTimeout(() => {
+                estacao4(); //Executa após 60000ms 
+            }, 60000);
+            setTimeout(() => {
+                runcode(); //Executa após 60000ms 
+            }, 70000);
+        }
+        if (running == false) {
+            console.log("stop")
+        }
+        document.getElementById('startBtn').addEventListener('click', startChain);
+    </script>
+    <footer>
+        <div>
+            <h4> <a href="https://vininiciusalvino.netlify.app/"> Vinícius alvino</a> <br>
+                Antoniovinicius_@outlook.com</h4>
+        </div>
+
+        </div>
+        <div>
+            <h4>SITE FEITO PARA FINS DIDÁTICOS!</h4>
+        </div>
+        <!--Copyright - 2024 Lokesh1379 (C Lokesh)  -->
+        <div class="redes">
+            <div class="parent">
+                <div class="child child-1">
+                    <button class="button btn-2"><a href="https://api.whatsapp.com/send?phone=5561983394560"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 16 16" class="bi bi-whatsapp" fill="currentColor" height="1.2em"
+                                xmlns="http://www.w3.org/2000/svg" style="color: rgb(3, 219, 3)">
+                                <path fill="green"
+                                    d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+                                </path>
+                            </svg></a></button>
+                </div>
+                <div>
+                    <div class="parent">
+                        <div class="child child-2">
+                            <button class="button btn-2"><a href="https://www.instagram.com/_a.vinicius_/"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 448 512"
+                                        fill="#ff00ff">
+                                        <path
+                                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                        </path>
+                                    </svg></a></button>
+                        </div>
+                        <div class="child child-3">
+                            <button class="button btn-3"><a href="https://github.com/AntonioviniciusA" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 496 512"
+                                        id="github" fill="black">
+                                        <path
+                                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                                        </path>
+                                    </svg></a></button>
+                        </div>
+                        <div class="child child-4">
+                            <button class="button btn-4"><a
+                                    href="https://www.linkedin.com/in/antonio-vinicius-alvino-silva-5099a92a6/"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                        height="1.2em" viewBox="0 0 320 512" fill="#4267B2">
+                                        <path
+                                            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z">
+                                        </path>
+                                    </svg></a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cp">
+                <sub>Copyright© 2024 Vinícius Alvino</sub>
+            </div>
+    </footer>
+</body>
+
+</html>
