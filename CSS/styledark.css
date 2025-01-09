@@ -3,7 +3,6 @@
   body.darkmode {
     margin: 0;
     padding: 0;
-    background: #000;
     overflow-x: hidden;
     overflow-y: scroll;
     a {
@@ -12,12 +11,13 @@
     }
 
     header {
-      background-color: black;
       position: relative;
       width: 100%;
       top: 0;
+      left: 0;
       margin: 0px;
       padding: 0px;
+      z-index: 2;
     }
 
     footer {
@@ -419,7 +419,10 @@
     }
     /*main*/
     article {
-      background-color: #000;
+      position: relative;
+      top: 0;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.8);
       color: #ddd;
       width: 100%;
       display: flex;
@@ -427,14 +430,15 @@
       text-align: center;
       background-repeat: repeat;
       background-size: cover;
+      margin: 0;
     }
 
     article section {
       width: 100%;
-      background-color: #131313; /*#575358*/
+      background-color: transparent; /*#575358*/
       font-size: 1.7em;
       border-radius: 0px;
-      margin: 5px;
+      margin: 0;
     }
 
     section#inicial {
@@ -567,7 +571,7 @@
     .amostras {
       border-radius: 0px;
       width: 100%;
-      background-color: #131313;
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 30px 0px 30px 0px;
     }
 
@@ -614,9 +618,9 @@
     }
 
     section#servicos .bg {
-      background-color: rgb(49, 49, 49);
+      background-color: rgb(49, 49, 49, 0.5);
       margin: 5px;
-      padding: 100px 100px 100px 100px;
+      padding: 0px 100px 0px 100px;
       color: #ddd;
       margin-left: 30%;
       width: 59.5%;
@@ -628,7 +632,9 @@
     }
     section#servicos {
       width: 100%;
-      background-image: url(../IMAGE/bgservicos.png);
+      background-image: url("../IMAGE/desk.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
       background-position-y: center;
       background-size: 30%;
     }
@@ -650,7 +656,7 @@
       border: #544119 1px;
     }
     .quadrado-div {
-      width: 60%;
+      width: 70%;
     }
 
     #titulo-servicos {
@@ -1126,6 +1132,7 @@
       text-align: center;
       background-repeat: repeat;
       background-size: cover;
+      margin: 0;
     }
 
     article section {
@@ -1133,7 +1140,7 @@
       background-color: #131313; /*#575358*/
       font-size: 15px;
       border-radius: 0px;
-      margin-top: 5px;
+      margin: 0;
     }
 
     section#inicial {
@@ -1333,7 +1340,13 @@
     }
     section#servicos {
       width: 100%;
-      background-image: url(../IMAGE/bgservicos.png);
+      #elemento {
+        background-image: url("sua-imagem.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
       background-position-y: center;
       background-size: 30%;
     }
@@ -1979,7 +1992,7 @@
     .amostras {
       border-radius: 0px;
       width: 100%;
-      background-color: #131313;
+      background-color: transparent;
       padding: 30px 0px 30px 0px;
     }
 
@@ -2037,7 +2050,13 @@
     }
     section#servicos {
       width: 100%;
-      background-image: url(../IMAGE/bgservicos.png);
+      #elemento {
+        background-image: url("sua-imagem.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
       background-position-y: center;
       background-size: 30%;
     }

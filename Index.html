@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="IMAGE/image.png" type="image/x-icon">
+  <link rel="stylesheet" href="CSS/loadingStyle.css">
+  <link rel="stylesheet" href="CSS/VideosStyle.css">
   <link rel="styledark" href="CSS/styledark.css">
   <link rel="stylesheet" href="CSS/styledark.css">
   <link rel="stylesheet" href="CSS/style.css">
@@ -13,6 +15,19 @@
 </head>
 
 <body class="darkmode content" id="mainContent">
+  <!-- Tela de loading -->
+  <div id="loading-screen">
+    <video autoplay muted loop>
+      <source src="VIDEOS/170655-843752693.mp4" type="video/mp4">
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <!-- From Uiverse.io by andrew-demchenk0  -->
+    <div class="loader">
+      <div data-glitch="Loading..." class="glitch">Loading...</div>
+    </div>
+  </div>
+
+  <script src="JS/LoadingAnimation.js"></script>
   <script>
     window.onload = function () {
       if (!localStorage.getItem('licenseAccepted')) {
@@ -55,9 +70,16 @@
       </label>
     </div>
   </header>
-  <main>
+  <main id="main-content">
+    <div class="video-background">
+      <video id="video-bg" autoplay muted loop>
+        <source id="video-src" src="VIDEOS/27706-365890968_small.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
     <article>
       <section id="inicial">
+
         <div>
           <img src="" alt="" class="fotodeperfil">
           <h1 class="escondido">Vinícius Alvino</h1>
@@ -71,7 +93,7 @@
         </div>
 
       </section>
-      <div class="espaço"></div>
+
       <section id="Habilidades">
         <h1 class="escondido">Habilidades e Experiências</h1>
         <div class="tri-flex">
@@ -105,43 +127,41 @@
           </div>
         </div>
       </section>
-      <div class="espaço"></div>
+
     </article>
 
-    <div class="stars">
+    <!-- <div class="stars">
       <div id="star"></div>
-    </div>
+    </div> -->
 
     <section class="amostras" id="projetos">
       <h1 class="titulo">Projetos</h1>
       <div>
         <div id="bg">
-          <img src="IMAGE/454659318_1223902839036800_1049136231319704015_n.png" alt="imagem do site sobre panfletos"
-            srcset="" class="escondido">
-          <a href="https://flyergen.netlify.app/"> <button type="button" class="botao escondido acao"
-              id="btnprojetos">Ver
-              projeto</button></a>
+          <a href="https://flyergen.netlify.app/">
+            <img src="IMAGE/454659318_1223902839036800_1049136231319704015_n.png" alt="imagem do site sobre panfletos"
+              srcset="" class="escondido">
+          </a>
         </div>
         <div id="bg">
-          <img src="IMAGE/Bom pra voce.png" alt="imagem do site sobre Café" class="escondido">
-          <a href="/Bompravoce.html"> <button type="button" class="botao escondido acao" id="btnprojetos">Ver
-              projeto</button></a>
+
+          <a href="/Bompravoce.html"><img src="IMAGE/Bom pra voce.png" alt="imagem do site sobre Café"
+              class="escondido"> </a>
         </div>
         <div id="bg">
-          <img src="IMAGE/453323963_2697523823762149_3548373700704308313_n.png" alt="imagem do site sobre Café"
-            class="escondido">
-          <a href="https://prevenirhipertensao.netlify.app/"> <button type="button" class="botao escondido acao"
-              id="btnprojetos">Ver
-              projeto</button></a>
+
+          <a href="https://prevenirhipertensao.netlify.app/"> <img
+              src="IMAGE/453323963_2697523823762149_3548373700704308313_n.png" alt="imagem do site sobre Café"
+              class="escondido"></a>
         </div>
         <div id="bg">
-          <img src="IMAGE/calculadora.png" alt="imagem do site sobre Café" class="escondido">
-          <a href="/calculadora.html"> <button type="button" class="botao escondido acao" id="btnprojetos">Ver
-              projeto</button></a>
+
+          <a href="/calculadora.html"> <img src="IMAGE/calculadora.png" alt="imagem do site sobre Café"
+              class="escondido"> </a>
         </div>
     </section>
     </div>
-    <div class="espaço"></div>
+
     <section id="servicos" class="escondido">
       <div class="bg">
         <h1 id="titulo-servicos">Serviços Oferecidos</h1>

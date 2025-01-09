@@ -1,0 +1,36 @@
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: -3;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Trocar vídeo com base no tamanho da tela */
+@media (max-width: 768px) {
+  video {
+    content: url("video-mobile.mp4");
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  video {
+    content: url("video-tablet.mp4");
+  }
+}
+
+@media (min-width: 1201px) {
+  video {
+    content: url("VIDEOS/27706-365890968.mp4");
+  }
+}

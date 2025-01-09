@@ -447,7 +447,7 @@ html {
 
   article section {
     width: 100%;
-    background-color: #969696; /*#575358*/
+    background-color: transparent; /*#575358*/
     font-size: 1.7em;
     border-radius: 0px;
     margin: 5px;
@@ -1274,6 +1274,7 @@ html {
     justify-content: center;
     align-items: stretch;
     flex-wrap: nowrap;
+    z-index: 3;
   }
 
   section#inicial div {
@@ -2426,7 +2427,7 @@ html {
       translateY(2px);
     border-radius: 50%;
   }
-  /*fundo de estrelas*/
+  /* fundo de estrelas
   .stars {
     content: "✰";
     width: 2px;
@@ -2459,5 +2460,5 @@ html {
     to {
       transform: translateY(-1000px);
     }
-  }
+  } */
 }
