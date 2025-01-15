@@ -467,7 +467,6 @@
       margin-bottom: 0.2em;
       font-size: 7rem;
       color: var(--cor-secundaria);
-      border: var(--cor-border) solid 1px;
     }
 
     section#inicial .detalhes #servicos {
