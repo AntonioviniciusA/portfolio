@@ -1,0 +1,22 @@
+.carousel {
+  display: flex;
+  overflow: hidden;
+  padding: 16px 0;
+  position: relative;
+  width: 100%;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s linear;
+}
+.carousel-item {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  align-content: center;
+}
+.carousel-item img {
+  width: 100%;
+}

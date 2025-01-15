@@ -19,9 +19,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #ad8524; /* color of the scroll thumb */
+  background-color: var(--cor-secundaria); /* color of the scroll thumb */
   border-radius: 0px; /* roundness of the scroll thumb */
-  border: 3px solid #ad8524; /* creates padding around scroll thumb */
+  border: 3px solid var(--cor-secundaria); /* creates padding around scroll thumb */
 }
 @media screen and (min-width: 1024px) {
   header {
@@ -509,52 +509,6 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--cor-secundaria);
   }
 
-  section .bg {
-    background-color: rgb(49, 49, 49);
-    padding: 5px;
-  }
-
-  section .tri-flex {
-    display: flex;
-    margin: 3em;
-  }
-
-  .escondido-tri {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-  .escondido-tri2 {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-  .escondido-tri3 {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-
-  .visivel-tri {
-    position: flex;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 2s;
-    margin: 5px;
-  }
-  .visivel-tri2 {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 3s;
-    margin: 5px;
-  }
-  .visivel-tri3 {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 4s;
-    margin: 5px;
-  }
-
   section#Habilidades h1 {
     font-size: 5rem;
     color: #ad8524;
@@ -565,11 +519,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.2em;
     color: #ad8524;
     border: #544119 1px;
-  }
-
-  .espaço {
-    background-color: rgb(210, 172, 72);
-    height: 200px;
   }
 
   .amostras {
@@ -704,7 +653,6 @@ body::-webkit-scrollbar-thumb {
     padding-top: 20px;
     margin-top: 10px;
     background-color: #fff;
-    color: #ad8524;
     text-align: center;
     font-size: small;
     font-family: sans-serif;
@@ -728,10 +676,10 @@ body::-webkit-scrollbar-thumb {
     margin: 0;
   }
   footer h4 {
-    color: #ad8524;
+    color: var(--cor-secundaria);
   }
   footer sub {
-    color: #ad8524;
+    color: var(--cor-secundaria);
   }
   /*Copyright - 2024 Lokesh1379 (C Lokesh) */
   .parent {
@@ -1323,53 +1271,6 @@ body::-webkit-scrollbar-thumb {
       rgba(175, 135, 39, 1) 100%
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2ac48",endColorstr="#af8727",GradientType=1);
-  }
-
-  section .bg {
-    background-color: rgb(49, 49, 49);
-    margin: 0;
-  }
-
-  section .tri-flex {
-    display: flex;
-    flex-direction: column;
-    margin: 3em;
-  }
-
-  .escondido-tri {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-  .escondido-tri2 {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-  .escondido-tri3 {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-
-  .visivel-tri {
-    position: flex;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 2s;
-    margin-top: 5px;
-  }
-  .visivel-tri2 {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 3s;
-    margin-top: 5px;
-  }
-  .visivel-tri3 {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 4s;
-    margin-top: 5px;
   }
 
   section#Habilidades h1 {
@@ -2145,53 +2046,6 @@ body::-webkit-scrollbar-thumb {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2ac48",endColorstr="#af8727",GradientType=1);
   }
 
-  section .bg {
-    background-color: rgb(49, 49, 49);
-    margin: 0;
-  }
-
-  section .tri-flex {
-    display: flex;
-    flex-direction: column;
-    margin: 3em;
-  }
-
-  .escondido-tri {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-  .escondido-tri2 {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-  .escondido-tri3 {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 2s;
-  }
-
-  .visivel-tri {
-    position: flex;
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 2s;
-    margin-top: 5px;
-  }
-  .visivel-tri2 {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 3s;
-    margin-top: 5px;
-  }
-  .visivel-tri3 {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: all 4s;
-    margin-top: 5px;
-  }
-
   section#Habilidades h1 {
     font-size: 3rem;
     color: #ad8524;
@@ -2202,11 +2056,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.2rem;
     color: #ad8524;
     border: #544119 1px;
-  }
-
-  .espaço {
-    background-color: rgb(210, 172, 72);
-    height: 100px;
   }
 
   .amostras {

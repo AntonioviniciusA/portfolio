@@ -8,26 +8,61 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  background: transparent;
   z-index: 9999;
+  animation: upEffect 6s ease-in-out forwards;
 }
 
 #loading-screen video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: zoomEffect 10s ease-in-out forwards;
 }
-
-@keyframes zoomEffect {
+@keyframes upEffect {
   0% {
-    transform: scale(1);
+    transform: translateY(0);
+    opacity: 1;
   }
-  50% {
-    transform: scale(1.2);
+  90% {
+    transform: translateY(0);
+    opacity: 1;
   }
   100% {
-    transform: scale(10);
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+:root {
+  --loading-bar-width: 100px;
+  --loading-bar-height: 5px;
+  --loading-fill-color: aqua;
+  --loading-bg-color: #e0e0e0;
+}
+
+.loading-bar {
+  width: var(--loading-bar-width);
+  height: var(--loading-bar-height);
+  margin-top: 50px;
+  background-color: var(--loading-bg-color);
+  padding: 3px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: fixed;
+}
+
+.loading-fill {
+  width: 0;
+  height: 100%; /* Fill the entire height of the loading bar */
+  background-color: var(--loading-fill-color);
+  animation: carregamento 6s ease forwards;
+}
+
+@keyframes carregamento {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--loading-bar-width);
   }
 }
 /* Conteúdo principal */
@@ -36,14 +71,6 @@
   text-align: center;
   font-family: Arial, sans-serif;
   margin-top: 20px;
-}
-#main-content {
-  opacity: 0;
-  transition: opacity 3s ease-out, transform 1s ease-out;
-}
-
-#main-content.show {
-  opacity: 1;
 }
 
 /* From Uiverse.io by andrew-demchenk0 */

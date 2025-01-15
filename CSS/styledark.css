@@ -487,51 +487,8 @@
       width: 200px;
       height: 40px;
       border-radius: 20px;
+      color: var(--cor-texto);
       background-color: var(--cor-secundaria);
-    }
-    section .bg {
-      background-color: rgb(49, 49, 49);
-      padding: 5px;
-    }
-
-    section .tri-flex {
-      display: flex;
-      margin: 3em;
-    }
-
-    .escondido-tri {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-    .escondido-tri2 {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-    .escondido-tri3 {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-
-    .visivel-tri {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 2s;
-      margin: 5px;
-    }
-    .visivel-tri2 {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 3s;
-      margin: 5px;
-    }
-    .visivel-tri3 {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 4s;
-      margin: 5px;
     }
 
     section#Habilidades h1 {
@@ -1193,51 +1150,6 @@
         rgba(175, 135, 39, 1) 100%
       );
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2ac48",endColorstr="#af8727",GradientType=1);
-    }
-    section .bg {
-      background-color: rgb(49, 49, 49);
-      margin: 0;
-    }
-
-    section .tri-flex {
-      display: flex;
-      flex-direction: column;
-      margin: 3em;
-    }
-
-    .escondido-tri {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-    .escondido-tri2 {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-    .escondido-tri3 {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-
-    .visivel-tri {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 2s;
-      margin-top: 5px;
-    }
-    .visivel-tri2 {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 3s;
-      margin-top: 5px;
-    }
-    .visivel-tri3 {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 4s;
-      margin-top: 5px;
     }
 
     section#Habilidades h1 {
@@ -1904,51 +1816,6 @@
       );
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2ac48",endColorstr="#af8727",GradientType=1);
     }
-    section .bg {
-      background-color: rgb(49, 49, 49);
-      margin: 0;
-    }
-
-    section .tri-flex {
-      display: flex;
-      flex-direction: column;
-      margin: 3em;
-    }
-
-    .escondido-tri {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-    .escondido-tri2 {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-    .escondido-tri3 {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: 2s;
-    }
-
-    .visivel-tri {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 2s;
-      margin-top: 5px;
-    }
-    .visivel-tri2 {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 3s;
-      margin-top: 5px;
-    }
-    .visivel-tri3 {
-      opacity: 1;
-      transform: translateY(0px);
-      transition: all 4s;
-      margin-top: 5px;
-    }
 
     section#Habilidades h1 {
       font-size: 3rem;
@@ -1968,11 +1835,6 @@
     section#Habilidades {
       padding: 30px 0px 30px 0px;
       margin: 0;
-    }
-
-    .espaço {
-      background-color: rgb(210, 172, 72);
-      height: 100px;
     }
 
     .amostras {
