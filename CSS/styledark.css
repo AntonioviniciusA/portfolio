@@ -505,11 +505,45 @@
       padding: 30px 0px 30px 0px;
     }
 
-    .espaço {
-      background-color: rgb(210, 172, 72);
-      height: 200px;
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    .content-software {
+      display: flex;
+      /* gap: 50px; */
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
     }
 
+    .software {
+      display: flex;
+      flex-direction: column;
+      background: var(--cor-primaria);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .software:hover {
+      transform: scale(1.05);
+    }
+
+    .software img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .software h2 {
+      font-size: 1.2em;
+      color: #555;
+    }
     .amostras {
       border-radius: 0px;
       width: 100%;
