@@ -525,7 +525,6 @@ body::-webkit-scrollbar-thumb {
     border-radius: 0px;
     width: 100%;
     padding: 30px 0px 30px 0px;
-    background-color: #969696;
   }
 
   .amostras #bg {
@@ -550,14 +549,6 @@ body::-webkit-scrollbar-thumb {
     opacity: 1;
     transform: translateX(0px);
     transition: all 2s;
-  }
-
-  .amostras div {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50%;
-    justify-content: space-evenly;
-    margin: 3px;
   }
 
   .titulo {
@@ -2316,7 +2307,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 50vh;
+  height: max-content;
   border-radius: 0px 18px 18px 0px;
   padding: 20px;
   transition: all 0.5s;

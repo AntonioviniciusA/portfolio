@@ -32,22 +32,7 @@
   </div>
 
   <script src="JS/LoadingAnimation.js"></script>
-  <script>
-    window.onload = function () {
-      if (!localStorage.getItem('licenseAccepted')) {
-        var licenseWindow = window.open('license.html', 'License Agreement', 'width=600,height=400');
-        var checkLicense = setInterval(function () {
-          if (localStorage.getItem('licenseAccepted')) {
-            clearInterval(checkLicense);
-            licenseWindow.close();
-            document.getElementById('mainContent').style.display = 'block';
-          }
-        }, 1000);
-      } else {
-        document.getElementById('mainContent').style.display = 'block';
-      }
-    };
-  </script>
+
   <header>
     <label class="bar" for="check">
       <input type="checkbox" id="check">
@@ -66,15 +51,14 @@
           <div id="sidebar_content">
             <ul id="links-nav-ul">
               <li><a href="" class="link">INICIO</a></li>
-              <li><a href="#Habilidades" class="link">Conhecimentos</a></li>
+              <li><a href="#Habilidades" class="link">CONHECIMENTOS</a></li>
 
               <li>
-                <a href="#projetos" class="link">Projetos</a>
+                <a href="#projetos" class="link">PROJETOS</a>
               </li>
-              <li><a href="" class="link"></a></li>
-              <li><a href="" class="link"></a></li>
-              <li><a href="" class="link"></a></li>
-              <li><a href="" class="link"></a></li>
+              <li><a href="/certificados.html" class="link">CERTIFICADOS</a></li>
+              <li><a href="#servicos" class="link">SERVIÇOS</a></li>
+              <li><a href="#contatos" class="link">CONTATO</a></li>
             </ul>
           </div>
         </nav>
@@ -159,74 +143,73 @@
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/512px-Node.js_logo.svg.png" />
             </div>
+            <div class="carousel-item">
+              <img src="icons/figma_logo_icon_170157.ico" />
+            </div>
+            <div class="carousel-item">
+              <img src="icons/microsoft_visual_studio_code_macos_bigsur_icon_189957.ico" />
+            </div>
+            <div class="carousel-item">
+              <img src="icons/Github_icon-icons.com_66788.ico" />
+            </div>
+            <div class="carousel-item">
+              <img src="icons/file_type_git_icon_130581.ico" />
+            </div>
           </div>
         </div>
+        <button>
+          CERTIFICADOS
+        </button>
         <script src="/JS/CaroseldeLogos.js"></script>
       </section>
-
     </article>
-
-    <!-- <div class="stars">
-      <div id="star"></div>
-    </div> -->
-
     <section class="amostras" id="projetos">
       <h1 class="titulo">Projetos</h1>
-      <div>
-        <div id="bg">
-          <a href="https://flyergen.netlify.app/">
-            <img src="IMAGE/454659318_1223902839036800_1049136231319704015_n.png" alt="imagem do site sobre panfletos"
-              srcset="" class="escondido">
-          </a>
-        </div>
-        <div id="bg">
-
-          <a href="/Bompravoce.html"><img src="IMAGE/Bom pra voce.png" alt="imagem do site sobre Café"
-              class="escondido"> </a>
-        </div>
-        <div id="bg">
-
-          <a href="https://prevenirhipertensao.netlify.app/"> <img
-              src="IMAGE/453323963_2697523823762149_3548373700704308313_n.png" alt="imagem do site sobre Café"
-              class="escondido"></a>
-        </div>
-        <div id="bg">
-
-          <a href="/calculadora.html"> <img src="IMAGE/calculadora.png" alt="imagem do site sobre Café"
-              class="escondido"> </a>
-        </div>
+      <div id="projetosContainer"></div>
+      <script src="JS/Projetos.js"></script>
     </section>
     </div>
-
-    <section id="servicos" class="escondido">
-      <div class="bg">
-        <h1 id="titulo-servicos">Serviços Oferecidos</h1>
-        <div id="servicos-1" class="quadrado-div escondido-tri servicos-item">
-          <h3><span>1.</span>Desenvolvimento de Sites</h3>
-          <p>
-            Criação de sites personalizados,
-            responsivos e otimizados para SEO,
-            com foco em oferecer uma
-            experiência de usuário excepcional.
-          </p>
+    <section class="servicos">
+      <div class="slider">
+        <div class="slides">
+          <div class="slide active">
+            <h1>Transforme sua Presença Online com Nossos Serviços</h1>
+          </div>
+          <div class="slide">
+            <h2>Desenvolvimento de Sites</h2>
+            <p>Criação de sites personalizados, responsivos e otimizados para SEO, com foco em oferecer uma experiência
+              de
+              usuário excepcional.</p>
+          </div>
+          <div class="slide">
+            <h2>Design Web</h2>
+            <p>Construção de layout, aparência e interação ao usuário, garantindo uma navegação intuitiva e atraente.
+            </p>
+          </div>
+          <div class="slide">
+            <h2>Consultoria Web</h2>
+            <p>Orientação e suporte técnico para empresas que desejam melhorar seus sites, aplicativos ou presença
+              online.
+            </p>
+          </div>
+          <div class="slide">
+            <h2>Por que Escolher Nossos Serviços?</h2>
+            <p>Atendimento personalizado, experiência e compromisso com a qualidade e resultados.</p>
+          </div>
+          <div class="slide">
+            <h2>Próximos Passos</h2>
+            <p>Entre em contato para uma consulta gratuita ou para discutir suas necessidades específicas.</p>
+          </div>
+          <div class="slide">
+            <h2>Agradecimento</h2>
+            <p>Obrigado pela atenção! Estamos prontos para ajudar a transformar sua presença online.</p>
+          </div>
         </div>
-
-        <div id="servicos-2" class="quadrado-div escondido-tri2 servicos-item">
-          <h3><span>2.</span>Design Web</h3>
-          <p>
-            Construção de layout, aparencia e interação ao usuário.
-          </p>
-        </div>
-
-        <div id="servicos-3" class="escondido-tri2 servicos-item retagulo-div">
-          <h3><span>3.</span>Consultoria Web</h3>
-          <p>
-            Orientação e suporte técnico para empresas que desejam melhorar seus sites,
-            aplicativos ou presença online.
-          </p>
-        </div>
+        <button class="prev slidebtn" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next slidebtn" onclick="changeSlide(1)">&#10095;</button>
       </div>
     </section>
+    <script src="JS/slideSevico.js"></script>
     <section class="historia">
 
 
