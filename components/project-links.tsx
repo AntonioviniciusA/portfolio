@@ -7,6 +7,7 @@ import {
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 const asstjImage = "/logo-asstj-sem-fundo.png";
+const dominusTechImage = "/Logo-light-dominus-tech.png";
 const projects = [
   {
     title:
@@ -14,6 +15,15 @@ const projects = [
     description: "Veja um de meus projetos feito para a ASSTJ",
     imageLogo: asstjImage,
     href: "https://www.asstj.org.br",
+    color: "text-chart-2",
+    bgColor: "bg-chart-2/10",
+    borderColor: "hover:border-chart-2",
+  },
+  {
+    title: "Site catalogo de produtos da Dominus Tech",
+    description: "Veja um de meus projetos feito para a Dominus Tech",
+    imageLogo: dominusTechImage,
+    href: "https://www.dominustech.shop/",
     color: "text-chart-2",
     bgColor: "bg-chart-2/10",
     borderColor: "hover:border-chart-2",
